@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLO Interactive Guide - Service Level Objectives</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <span>SLO Interactive Guide</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#concepts" class="nav-link">Concepts</a>
+                <a href="#calculator" class="nav-link">Calculator</a>
+                <a href="#case-studies" class="nav-link">Case Studies</a>
+                <a href="#simulator" class="nav-link">Simulator</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="overview" class="hero">
+            <div class="container">
+                <h1>Service-Level Objectives</h1>
+                <p class="hero-subtitle">A Foundational Framework for Business Reliability</p>
+                <p class="hero-description">
+                    Master the art of balancing innovation with reliability through data-driven SLOs, 
+                    error budgets, and strategic service management.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Typical SLO Target</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">43.2 min</div>
+                        <div class="stat-label">Monthly Error Budget</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Golden Signals</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concepts Section -->
+        <section id="concepts" class="concepts">
+            <div class="container">
+                <h2>Understanding SLIs, SLOs, and SLAs</h2>
+                <p class="section-description">
+                    These three foundational concepts form the reliability framework. Click on each concept to learn more.
+                </p>
+                
+                <div class="concepts-grid">
+                    <div class="concept-card" data-concept="sli">
+                        <div class="concept-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Service-Level Indicator (SLI)</h3>
+                        <p>Quantitative measures of service performance</p>
+                        <div class="concept-details" id="sli-details">
+                            <h4>What it measures:</h4>
+                            <ul>
+                                <li><strong>Availability:</strong> Proportion of successful requests</li>
+                                <li><strong>Latency:</strong> Response time in milliseconds</li>
+                                <li><strong>Throughput:</strong> Requests per second</li>
+                                <li><strong>Error Rate:</strong> Failed requests percentage</li>
+                            </ul>
+                            <div class="example">
+                                <strong>Example:</strong> "95% of requests complete in under 200ms"
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card" data-concept="slo">
+                        <div class="concept-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Service-Level Objective (SLO)</h3>
+                        <p>Internal targets for service performance</p>
+                        <div class="concept-details" id="slo-details">
+                            <h4>Key characteristics:</h4>
+                            <ul>
+                                <li>Internal performance targets</li>
+                                <li>Based on user needs and business goals</li>
+                                <li>Realistic and achievable</li>
+                                <li>Triggers internal responses when breached</li>
+                            </ul>
+                            <div class="example">
+                                <strong>Example:</strong> "99.9% availability over 30 days"
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card" data-concept="sla">
+                        <div class="concept-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Service-Level Agreement (SLA)</h3>
+                        <p>Legal contracts with customers</p>
+                        <div class="concept-details" id="sla-details">
+                            <h4>Key characteristics:</h4>
+                            <ul>
+                                <li>Legal contract with customers</li>
+                                <li>Financial penalties for violations</li>
+                                <li>External-facing commitments</li>
+                                <li>Usually less strict than internal SLOs</li>
+                            </ul>
+                            <div class="example">
+                                <strong>Example:</strong> "99.5% uptime with service credits for violations"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-table">
+                    <h3>Quick Comparison</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concept</th>
+                                <th>Purpose</th>
+                                <th>Audience</th>
+                                <th>Consequences</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SLI</strong></td>
+                                <td>Measure performance</td>
+                                <td>Engineering teams</td>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SLO</strong></td>
+                                <td>Set internal targets</td>
+                                <td>Internal teams</td>
+                                <td>Triggers internal actions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SLA</strong></td>
+                                <td>Legal commitments</td>
+                                <td>External customers</td>
+                                <td>Financial penalties</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculator" class="calculator">
+            <div class="container">
+                <h2>SLO & Error Budget Calculator</h2>
+                <p class="section-description">
+                    Calculate the real-world implications of your SLO targets and understand your error budget.
+                </p>
+
+                <div class="calculator-grid">
+                    <div class="calculator-input">
+                        <h3>Configure Your SLO</h3>
+                        <div class="input-group">
+                            <label for="slo-target">SLO Target (%)</label>
+                            <input type="number" id="slo-target" value="99.9" min="90" max="99.999" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label for="time-period">Time Period</label>
+                            <select id="time-period">
+                                <option value="30">30 days (monthly)</option>
+                                <option value="7">7 days (weekly)</option>
+                                <option value="365">365 days (yearly)</option>
+                            </select>
+                        </div>
+                        <button id="calculate-btn" class="btn-primary">
+                            <i class="fas fa-calculator"></i>
+                            Calculate
+                        </button>
+                    </div>
+
+                    <div class="calculator-results">
+                        <h3>Results</h3>
+                        <div class="result-cards">
+                            <div class="result-card">
+                                <div class="result-value" id="error-budget-percent">0.1%</div>
+                                <div class="result-label">Error Budget</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="allowed-downtime">43.2 min</div>
+                                <div class="result-label">Allowed Downtime</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="uptime-hours">719.6 hrs</div>
+                                <div class="result-label">Required Uptime</div>
+                            </div>
+                        </div>
+
+                        <div class="error-budget-visualization">
+                            <h4>Error Budget Visualization</h4>
+                            <div class="budget-bar">
+                                <div class="budget-used" id="budget-used" style="width: 0%"></div>
+                                <div class="budget-remaining" id="budget-remaining" style="width: 100%"></div>
+                            </div>
+                            <div class="budget-labels">
+                                <span>Used: <span id="used-percent">0%</span></span>
+                                <span>Remaining: <span id="remaining-percent">100%</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slo-comparison">
+                    <h3>SLO Target Comparison</h3>
+                    <div class="comparison-grid" id="slo-comparison-grid">
+                        <!-- Dynamically generated comparison table -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section id="case-studies" class="case-studies">
+            <div class="container">
+                <h2>Real-World Case Studies</h2>
+                <p class="section-description">
+                    Explore how different companies would approach SLOs based on their business models.
+                </p>
+
+                <div class="case-study-tabs">
+                    <button class="tab-btn active" data-tab="spotify">Spotify</button>
+                    <button class="tab-btn" data-tab="uber">Uber</button>
+                    <button class="tab-btn" data-tab="etsy">Etsy</button>
+                </div>
+
+                <div class="case-study-content">
+                    <div class="tab-content active" id="spotify">
+                        <div class="case-study-header">
+                            <div class="company-logo">
+                                <i class="fab fa-spotify"></i>
+                            </div>
+                            <div class="company-info">
+                                <h3>Spotify: The Experience Engine</h3>
+                                <p>Seamless, personalized music streaming experience</p>
+                            </div>
+                        </div>
+                        <div class="case-study-details">
+                            <h4>Critical User Journeys</h4>
+                            <div class="journey-cards">
+                                <div class="journey-card">
+                                    <i class="fas fa-search"></i>
+                                    <h5>Music Discovery</h5>
+                                    <p>Personalized playlists and recommendations</p>
+                                </div>
+                                <div class="journey-card">
+                                    <i class="fas fa-play"></i>
+                                    <h5>Streaming</h5>
+                                    <p>Uninterrupted music and podcast playback</p>
+                                </div>
+                                <div class="journey-card">
+                                    <i class="fas fa-user"></i>
+                                    <h5>Account Management</h5>
+                                    <p>Profile access and subscription management</p>
+                                </div>
+                            </div>
+                            <h4>Likely SLOs</h4>
+                            <div class="slo-examples">
+                                <div class="slo-example">
+                                    <strong>Availability:</strong> 99.9% for streaming services
+                                </div>
+                                <div class="slo-example">
+                                    <strong>Latency:</strong> P99 < 200ms for recommendations
+                                </div>
+                                <div class="slo-example">
+                                    <strong>Throughput:</strong> Handle peak concurrent users
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="uber">
+                        <div class="case-study-header">
+                            <div class="company-logo">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="company-info">
+                                <h3>Uber: Reliability as a Mission</h3>
+                                <p>"Transportation as reliable as running water, everywhere, for everyone"</p>
+                            </div>
+                        </div>
+                        <div class="case-study-details">
+                            <h4>Mission-Critical Services</h4>
+                            <div class="journey-cards">
+                                <div class="journey-card">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h5>Ride Matching</h5>
+                                    <p>Connect riders with drivers instantly</p>
+                                </div>
+                                <div class="journey-card">
+                                    <i class="fas fa-credit-card"></i>
+                                    <h5>Payment Processing</h5>
+                                    <p>Secure and reliable transactions</p>
+                                </div>
+                                <div class="journey-card">
+                                    <i class="fas fa-route"></i>
+                                    <h5>Real-time Tracking</h5>
+                                    <p>Live location and ETA updates</p>
+                                </div>
+                            </div>
+                            <h4>Likely SLOs</h4>
+                            <div class="slo-examples">
+                                <div class="slo-example">
+                                    <strong>Availability:</strong> 99.99% for ride requests
+                                </div>
+                                <div class="slo-example">
+                                    <strong>Latency:</strong> < 100ms for matching system
+                                </div>
+                                <div class="slo-example">
+                                    <strong>Data Integrity:</strong> 99.999% for transactions
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="etsy">
+                        <div class="case-study-header">
+                            <div class="company-logo">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="company-info">
+                                <h3>Etsy: The Trust-Based Marketplace</h3>
+                                <p>Secure marketplace for individual sellers and buyers</p>
+                            </div>
+                        </div>
+                        <div class="case-study-details">
+                            <h4>Trust-Critical Functions</h4>
+                            <div class="journey-cards">
+                                <div class="journey-card">
+                                    <i class="fas fa-search"></i>
+                                    <h5>Product Search</h5>
+                                    <p>Accurate and relevant search results</p>
+                                </div>
+                                <div class="journey-card">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <h5>Checkout Process</h5>
+                                    <p>Secure and reliable transactions</p>
+                                </div>
+                                <div class="journey-card">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h5>Security</h5>
+                                    <p>Protect seller and buyer data</p>
+                                </div>
+                            </div>
+                            <h4>Likely SLOs</h4>
+                            <div class="slo-examples">
+                                <div class="slo-example">
+                                    <strong>Availability:</strong> 99.5% for core services
+                                </div>
+                                <div class="slo-example">
+                                    <strong>Latency:</strong> P95 < 500ms for search
+                                </div>
+                                <div class="slo-example">
+                                    <strong>Correctness:</strong> 99.9% for transactions
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulator Section -->
+        <section id="simulator" class="simulator">
+            <div class="container">
+                <h2>Error Budget Policy Simulator</h2>
+                <p class="section-description">
+                    Simulate how different incidents and policies affect your error budget.
+                </p>
+
+                <div class="simulator-grid">
+                    <div class="simulator-controls">
+                        <h3>Simulate Incidents</h3>
+                        <div class="incident-controls">
+                            <div class="input-group">
+                                <label for="incident-duration">Incident Duration (minutes)</label>
+                                <input type="number" id="incident-duration" value="10" min="1" max="1440">
+                            </div>
+                            <div class="input-group">
+                                <label for="incident-frequency">Incidents per Month</label>
+                                <input type="number" id="incident-frequency" value="2" min="0" max="30">
+                            </div>
+                            <button id="simulate-incident" class="btn-secondary">
+                                <i class="fas fa-play"></i>
+                                Simulate
+                            </button>
+                            <button id="reset-simulation" class="btn-outline">
+                                <i class="fas fa-undo"></i>
+                                Reset
+                            </button>
+                        </div>
+
+                        <div class="policy-settings">
+                            <h4>Error Budget Policy</h4>
+                            <div class="input-group">
+                                <label for="freeze-threshold">Feature Freeze Threshold (%)</label>
+                                <input type="number" id="freeze-threshold" value="80" min="0" max="100">
+                            </div>
+                            <div class="input-group">
+                                <label for="critical-threshold">Critical Alert Threshold (%)</label>
+                                <input type="number" id="critical-threshold" value="95" min="0" max="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="simulator-results">
+                        <h3>Simulation Results</h3>
+                        <div class="simulation-timeline" id="simulation-timeline">
+                            <div class="timeline-header">
+                                <span>Month Progress</span>
+                                <span id="current-day">Day 1</span>
+                            </div>
+                            <div class="timeline-bar">
+                                <div class="timeline-progress" id="timeline-progress"></div>
+                                <div class="timeline-incidents" id="timeline-incidents"></div>
+                            </div>
+                        </div>
+
+                        <div class="budget-status">
+                            <div class="status-card" id="budget-status-card">
+                                <div class="status-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="status-text">
+                                    <div class="status-title">Budget Healthy</div>
+                                    <div class="status-subtitle">Continue normal operations</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="policy-actions" id="policy-actions">
+                            <h4>Recommended Actions</h4>
+                            <div class="action-list">
+                                <div class="action-item">
+                                    <i class="fas fa-check text-success"></i>
+                                    <span>Continue feature development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SLO Interactive Guide</h4>
+                    <p>Master Service-Level Objectives through interactive learning and practical tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://sre.google/workbook/implementing-slos/" target="_blank">Google SRE SLO Guide</a></li>
+                        <li><a href="https://sre.google/workbook/error-budget-policy/" target="_blank">Error Budget Policy</a></li>
+                        <li><a href="https://cloud.google.com/blog/products/devops-sre/sre-fundamentals-slis-slas-and-slos" target="_blank">SRE Fundamentals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Built to help teams understand and implement SLOs effectively.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SLO Interactive Guide. Educational content based on SRE best practices.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
