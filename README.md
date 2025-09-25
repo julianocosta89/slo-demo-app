@@ -162,10 +162,6 @@ This interactive guide is based on the comprehensive SLO report and incorporates
 - [Google SRE Workbook](https://sre.google/workbook/implementing-slos/)
 - [SRE Fundamentals](https://cloud.google.com/blog/products/devops-sre/sre-fundamentals-slis-slas-and-slos)
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - Based on the comprehensive SLO report provided
